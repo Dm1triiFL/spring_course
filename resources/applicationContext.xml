@@ -8,7 +8,7 @@
     </bean>
     <bean id = "myPerson"
           class = "org.example.spring_introduction.Person">
-        <constructor-arg ref="myPet"/>
+          <property name="pet" ref="myPet"/>
     </bean>
 </beans>
 
