@@ -1,6 +1,9 @@
 package org.example.spring_introduction;
 
 public class Cat implements Pet {
+    public Cat() {
+        System.out.println("Cat bean is created");
+    }
 
     @Override
     public void say() {
