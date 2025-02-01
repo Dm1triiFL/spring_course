@@ -9,4 +9,5 @@
            http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:component-scan base-package="org.example.spring_introduction"/>
+<!--    <context:property-placeholder location="myApp.properties"/>-->
 </beans>
