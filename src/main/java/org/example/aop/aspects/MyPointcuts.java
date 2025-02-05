@@ -2,7 +2,7 @@ package org.example.aop.aspects;
 
 import org.aspectj.lang.annotation.Pointcut;
 
-public class MyPointcuts {
-    @Pointcut("execution(* get*())")
-    public void allGetMethods() {}
+public class  MyPointcuts {
+    @Pointcut("execution(* add*(..))")
+    public void allAddMethods() {}
 }
