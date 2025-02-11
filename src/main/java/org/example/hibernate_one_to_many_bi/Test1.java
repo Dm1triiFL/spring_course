@@ -18,31 +18,43 @@ public class Test1 {
 
         try {
 
-            session = factory.getCurrentSession();
-            session.beginTransaction();
-            Employee employee = session.get(Employee.class, 4);
-            session.delete(employee);
 
 
-
-            session.getTransaction().commit();
-            System.out.println("Done");
-
-
-//            Department dep = new Department("IT", 300, 1200);
-//            Employee emp1 = new Employee("Di", "Shu", 800);
-//            Employee emp2 = new Employee("Al", "Um", 500);
-//            dep.addEmployeeForDepartment(emp1);
-//            dep.addEmployeeForDepartment(emp2);
-//
 //            session = factory.getCurrentSession();
 //            session.beginTransaction();
-//            session.save(dep);
+//            Employee employee = session.get(Employee.class, 4);
+//            session.delete(employee);
 //
 //
 //
 //            session.getTransaction().commit();
 //            System.out.println("Done");
+
+//*******************************************************
+//            Department dep = new Department("Sales", 800, 1200);
+//            Employee emp1 = new Employee("Di", "Shu", 800);
+//            Employee emp2 = new Employee("Al", "Um", 1200);
+//            Employee emp3 = new Employee("K", "un", 1200);
+//            dep.addEmployeeForDepartment(emp1);
+//            dep.addEmployeeForDepartment(emp2);
+//            dep.addEmployeeForDepartment(emp3);
+
+            session = factory.getCurrentSession();
+            session.beginTransaction();
+
+            System.out.println("Get department");
+            Department department = session.get(Department.class, 5);
+
+            System.out.println("Show department");
+            System.out.println(department);
+
+            System.out.println("Подгрузка работников до закрытия сессии");
+            department.getEmps().get(0);
+            session.getTransaction().commit();
+
+            System.out.println("Show employees of department");
+            System.out.println(department.getEmps());
+            System.out.println("Done");
 
         }
         finally {
